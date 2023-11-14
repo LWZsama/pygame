@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>无标题文档</title>
+
+</head>
+
+ 
+
+<body>
+
+    First number:<br><input type="number" id="num1"><br>
+
+    Second number:<br><input type="number" id="num2"><br>
+
+    <button type="button" onclick="add()">+</button><br>
+
+    <button type="button" onclick="minus()">-</button><br>
+
+    <button type="button" onclick="multiply()">*</button><br>
+
+    <button type="button" onclick="divide()">/</button><br>
+
+    My answer:<br><input type="number" id="myanswer"><br>
+
+    Correct answer:<br><br><a id="correctanswer" style="border:2px solid #000">none</a><br><br>
+    
+    <button type="button" onclick="show()">show answer</button><br>
+
+    
+</body>
+
+<script>
+    var result = 0;
+
+    function add(){
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        result = num1 + num2;
+    }
+    function minus(){
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        result = num1 - num2;
+    }
+    function multiply(){
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        result = num1 * num2;
+        document.getElementById("correctanswer").innerHTML = result;
+    }
+    function divide(){
+        var num1 = parseInt(document.getElementById("num1").value);
+        var num2 = parseInt(document.getElementById("num2").value);
+        result = num1 / num2;
+    }
+    function show(){
+        var myans = parseInt(document.getElementById("myanswer").value);
+        document.getElementById("correctanswer").innerHTML = result;
+        if (myans !== result) {
+            alert("incorrect");
+        } else {
+            alert("correct");
+        }
+    }
+</script>
+
+</html>
